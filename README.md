@@ -12,7 +12,7 @@
 
 ## NodeJS
 
-`sudo docker run -p 3000:3000 --name node --hostname node -v $PWD:/home/host node:12.11 -it --rm /bin/bash`
+`sudo docker run -p 3000:3000 --name node --hostname node -v $PWD:/home/host -it --rm node:12.11 /bin/bash`
 
 ## For Databases
 
