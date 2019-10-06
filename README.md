@@ -8,11 +8,11 @@
 
 ## PHP
 
-`docker run -p 80:80 --name php --hostname php -v $PWD:/var/www/html php:7.2-apache /bin/bash`
+`sudo docker run -p 80:80 --name php --hostname php -v $PWD:/var/www/html php:7.2-apache /bin/bash`
 
 ## NodeJS
 
-`docker run -p 3000:3000 --name node --hostname node -v $PWD:/home/host node:12.11 /bin/bash`
+`sudo docker run -p 3000:3000 --name node --hostname node -v $PWD:/home/host node:12.11 /bin/bash`
 
 ## For Databases
 
