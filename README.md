@@ -4,15 +4,15 @@
 
 `sudo docker build -t "python:ecsc" -f python.docker .`
 
-`sudo docker run --network host --name py --hostname py -v $PWD:/home/host -it python:ecsc /bin/bash`
+`sudo docker run --network host --name py --hostname py -v $PWD:/home/host -it --rm python:ecsc /bin/bash`
 
 ## PHP
 
-`sudo docker run -p 80:80 --name php --hostname php -v $PWD:/var/www/html php:7.2-apache /bin/bash`
+`sudo docker run -p 80:80 --name php --hostname php -v $PWD:/var/www/html -it --rm php:7.2-apache /bin/bash`
 
 ## NodeJS
 
-`sudo docker run -p 3000:3000 --name node --hostname node -v $PWD:/home/host node:12.11 /bin/bash`
+`sudo docker run -p 3000:3000 --name node --hostname node -v $PWD:/home/host node:12.11 -it --rm /bin/bash`
 
 ## For Databases
 
