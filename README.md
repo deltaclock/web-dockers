@@ -1,16 +1,26 @@
 # Dockers Setup
 
-`sudo docker build -t "node:ecsc" -f node.docker .`
+## Python
 
-`sudo docker run --network host --name nodejs --hostname nodejs -v $HOME/node:/home/host -itd node:ecsc`
+`sudo docker build -t "python:ecsc" -f python.docker .`
 
-## For dbs
+`sudo docker run --network host --name py --hostname py -v $PWD:/home/host -it python:ecsc /bin/bash`
 
-```
+## PHP
+
+`docker run -p 80:80 --name php --hostname php -v $PWD:/var/www/html php:7.2-apache /bin/bash`
+
+## NodeJS
+
+`docker run -p 3000:3000 --name node --hostname node -v $PWD:/home/host node:12.11 /bin/bash`
+
+## For Databases
+
+```bash
 sudo docker run --network host --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql
 sudo docker exec -it mysql mysql -uroot -p
 sudo docker run --network host --name post -e POSTGRES_PASSWORD=root -d postgres
 sudo docker exec -it post psql -U postgres
 sudo docker run --network host --name mongo -d mongo
-sudo docker exec -it mono mongo
+sudo docker exec -it mongo mongo
 ```
